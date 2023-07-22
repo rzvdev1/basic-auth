@@ -1,13 +1,13 @@
 'use strict';
 
 const supertest = require('supertest');
-const { server } = require('../src/server');
-const { it } = require('node:test');
+const server = require('../src/server');
 const mockRequest = supertest(server);
 
 describe('server running', () => {
-  it('should respond with a 404 on a bad route', async () => {
-    const response = await mockRequest.get('/foo');
-    expect(response.status).toBe(404);
+  test('the / route will send a response of Hello, World!', async () => {
+    const response = await mockRequest.get('/');
+    expect(response.status).toBe(200);
+    expect(response.text).toBe('Hello, World!');
   });
 });

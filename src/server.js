@@ -6,11 +6,13 @@ const basic = require('./auth/middleware/basic');
 const pageNotFoundHandler = require('./middleware/404.js');
 const errorHandler = require('./middleware/500.js');
 
-const { Users } = require('./auth/models');
+const { Users } = require('./auth/models/');
 
 const server = express();
 
 server.use(express.json());
+
+server.get('/', (req, res) => res.status(200).send('Hello, World!'));
 
 server.use(express.urlencoded({ extended: true }));
 
@@ -27,6 +29,7 @@ server.post('/signup', async (req, res) => {
 server.post('/signin', basic, (req, res) => {
   res.status(200).send(req.user);
 });
+
 server.use('*', pageNotFoundHandler);
 server.use(errorHandler);
 

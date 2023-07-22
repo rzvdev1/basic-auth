@@ -82,8 +82,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ### My work
 
-- [GitHub Actions]()
-- [Main branch Render]()
+- [GitHub Actions](https://github.com/rzvdev1/basic-auth/actions)
+- [Main branch Render](https://basic-auth-q2sz.onrender.com/)
 
 #### Resources
 
