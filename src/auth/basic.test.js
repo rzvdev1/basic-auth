@@ -1,9 +1,10 @@
 'use strict';
+
 const supertest = require('supertest');
 const { server } = require('../src/server');
 const mockRequest = supertest(server);
 
-// jest.mock('../src/auth/models');
+jest.mock('../src/auth/models');
 
 describe('basic auth', () => {
   it('should return an error for invalid user', async () => {

@@ -30,7 +30,7 @@ server.post('/signin', basic, (req, res) => {
   res.status(200).send(req.user);
 });
 
-server.use('*', pageNotFoundHandler);
+server.use(pageNotFoundHandler);
 server.use(errorHandler);
 
 module.exports = server;
